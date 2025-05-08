@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- custom css -->
+    <link rel="stylesheet" href="./css/style.css">
+    <title>My Wishlist</title>
+</head>
+
+<body>
+    <div>
+        <div class="text-sm mb-4 text-gray-500 py-6 bg-gray-200">
+            <div class="max-w-7xl mx-auto">
+                <a href="#" class="hover:underline">Home</a> &gt; <span class="text-black">Wishlist</span>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto">
+            <!-- Breadcrumb -->
+            <div>
+                <h4 class="font-semibold text-xl md:text-2xl mb-4">My wishlist on MarketPress</h4>
+            </div>
+            <!-- Wishlist Table -->
+            <div class="overflow-x-auto mt-5">
+                <table class="w-full border border-gray-200">
+                    <thead class="bg-gray-100 text-left text-sm text-gray-700">
+                        <tr>
+                            <th class="p-4"></th>
+                            <th class="p-4">Product</th>
+                            <th class="p-4">Product name</th>
+                            <th class="p-4">Unit price</th>
+                            <th class="p-4">Stock status</th>
+                            <th class="p-4"></th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-sm">
+                        <!-- Row 1 -->
+                        <tr class="border-b">
+                            <td class="border border-slate-200 p-4 text-red-500">
+                                <button
+                                    class="flex justify-center items-center cursor-pointer hover:text-white size-5 text-sm rounded-full hover:bg-red-500"><i
+                                        class="fa-solid fa-xmark"></i></button>
+                            </td>
+                            <td class="border border-slate-200 p-4">
+                                <img src="https://demo.xpeedstudio.com/marketov2/grocery/wp-content/uploads/sites/12/2018/10/3-min-300x300.jpg"
+                                    alt="Lipstick" class="object-contain sm:w-[150px] mx-auto">
+                            </td>
+                            <td class="border border-slate-200 p-4 text-blue-600 hover:underline">
+                                Hento Deals Security Tire Grid
+                            </td>
+                            <td class="border border-slate-200 p-4">
+                                <span class="line-through text-gray-400">$99.00</span>
+                                <span class="text-green-600 font-semibold ml-2">$59.00</span>
+                            </td>
+                            <td class="border border-slate-200 p-4 text-green-600">In Stock</td>
+                            <td class="border border-slate-200 p-4">
+                                <a href="#" class="text-blue-500 hover:underline">Add to Cart</a>
+                            </td>
+                        </tr>
+
+                        <!-- Row 2 -->
+                        <tr class="border-b">
+                            <td class="border border-slate-200 p-4 text-red-500">
+                                <button
+                                    class="flex justify-center items-center cursor-pointer hover:text-white size-5 text-sm rounded-full hover:bg-red-500"><i
+                                        class="fa-solid fa-xmark"></i></button>
+                            </td>
+                            <td class="border border-slate-200 p-4">
+                                <img src="https://demo.xpeedstudio.com/marketov2/grocery/wp-content/uploads/sites/12/2018/10/3-min-300x300.jpg"
+                                    alt="Lipstick" class="object-contain sm:w-[150px] mx-auto">
+                            </td>
+                            <td class="border border-slate-200 p-4 text-blue-600 hover:underline">
+                                Hento Deals Security Tire Grid
+                            </td>
+                            <td class="border border-slate-200 p-4">
+                                <span class="line-through text-gray-400">$99.00</span>
+                                <span class="text-green-600 font-semibold ml-2">$59.00</span>
+                            </td>
+                            <td class="border border-slate-200 p-4 text-green-600">In Stock</td>
+                            <td class="border border-slate-200 p-4">
+                                <a href="#" class="text-blue-500 hover:underline">Add to Cart</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>

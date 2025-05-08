@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- font awesome -->
+    <!-- <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- custom css -->
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Blog</title>
+</head>
+
+<body>
+    <div class="bg-gray-50 py-10 px-4">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Blog Posts -->
+            <div class="lg:col-span-2 space-y-10">
+                <!-- Single Blog Card -->
+                <div class="bg-white rounded shadow p-4">
+                    <a href="#">
+                        <img src="https://demo.xpeedstudio.com/marketov2/grocery/wp-content/uploads/sites/12/2018/04/news-4-e1594817480976.jpg"
+                            alt="Post" class="w-full rounded">
+                    </a>
+                    <div class="flex items-center mt-4">
+                        <i class="fas fa-user text-gray-500 mr-2"></i>
+                        <span class="text-sm text-gray-500">Crail</span>
+                    </div>
+                    <div class="mt-2">
+                        <a href="#">
+                            <span class="text-xs text-blue-600 uppercase">Electronics</span>
+                        </a>
+                        <a href="#" class="font-bold text-lg md:text-2xl block mt-4">
+                            Seating Collection Inspiration Is Not Enough For People
+                        </a>
+                        <p class="text-sm text-gray-600 mt-2 line-clamp-3">Sed ut perspiciatis unde omnis iste natus
+                            error sit
+                            voluptatem accusantium doloremque laudantium Sed ut perspiciatis unde omnis iste natus error
+                            sit
+                            voluptatem accusantium doloremque laudantium Sed ut perspiciatis unde omnis iste natus error
+                            sit
+                            voluptatem accusantium doloremque laudantium...</p>
+                        <a href="singleBlog.html"
+                            class="inline-block mt-4 px-4 py-2 bg-blue-600 text-white text-sm rounded">Continue
+                            Reading</a>
+                    </div>
+                </div>
+                <div class="bg-white rounded shadow p-4">
+                    <a href="#">
+                        <img src="https://demo.xpeedstudio.com/marketov2/grocery/wp-content/uploads/sites/12/2018/04/news-3-e1594817509353.jpg"
+                            alt="Post" class="w-full rounded">
+                    </a>
+                    <div class="flex items-center mt-4">
+                        <i class="fas fa-user text-gray-500 mr-2"></i>
+                        <span class="text-sm text-gray-500">Crail</span>
+                    </div>
+                    <div class="mt-2">
+                        <a href="#">
+                            <span class="text-xs text-blue-600 uppercase">Electronics</span>
+                        </a>
+                        <a href="#" class="font-bold text-lg md:text-2xl block mt-4">
+                            Seating Collection Inspiration Is Not Enough For People
+                        </a>
+                        <p class="text-sm text-gray-600 mt-2 line-clamp-3">Sed ut perspiciatis unde omnis iste natus
+                            error sit
+                            voluptatem accusantium doloremque laudantium Sed ut perspiciatis unde omnis iste natus error
+                            sit
+                            voluptatem accusantium doloremque laudantium Sed ut perspiciatis unde omnis iste natus error
+                            sit
+                            voluptatem accusantium doloremque laudantium...</p>
+                        <a href="singleBlog.html"
+                            class="inline-block mt-4 px-4 py-2 bg-blue-600 text-white text-sm rounded">Continue
+                            Reading</a>
+                    </div>
+                </div>
+                <!-- Repeat blog card structure for more posts... -->
+            </div>
+
+            <!-- Sidebar -->
+            <div class="space-y-6">
+                <!-- Search -->
+                <div class="bg-white p-4 rounded shadow">
+                    <div class="flex">
+                        <input type="text" placeholder="Search..."
+                            class="max-w-4/5 sm:flex-1 border px-2 py-1 rounded-l">
+                        <button class="bg-yellow-400 px-4 py-1 rounded-r">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Recent Posts -->
+                <div class="bg-white p-4 rounded shadow">
+                    <h3 class="font-semibold pl-3 border-l-4 py-1 border-lime-500">Recent Posts</h3>
+                    <ul class="text-sm p-4">
+                        <li class="border-b py-2 border-gray-200 border-dashed"><a href="#">Seating Collection
+                                Inspiration Is Not Enough For People</a></li>
+                        <li class="border-b py-2 border-gray-200 border-dashed"><a href="#">Exterior Ideas: 10 Colored
+                                Fiber Garden Seats</a></li>
+                        <li class="border-b py-2 border-gray-200 border-dashed"><a href="#">Creative Water Features And
+                                Exterior Design</a></li>
+                        <li class="border-b py-2 border-gray-200 border-dashed"><a href="#">Hello world!</a></li>
+                    </ul>
+                </div>
+
+                <!-- Recent Comments -->
+                <div class="bg-white p-4 rounded shadow">
+                    <h3 class="font-semibold pl-3 border-l-4 py-1 border-lime-500">Recent Comments</h3>
+                    <ul class="text-sm p-4">
+                        <li class="border-b py-2 border-gray-200 border-dashed"><a href="#">Seating Collection
+                                Inspiration Is Not Enough For People</a></li>
+                        <li class="border-b py-2 border-gray-200 border-dashed"><a href="#">Exterior Ideas: 10 Colored
+                                Fiber Garden Seats</a></li>
+                        <li class="border-b py-2 border-gray-200 border-dashed"><a href="#">Creative Water Features And
+                                Exterior Design</a></li>
+                        <li class="border-b py-2 border-gray-200 border-dashed"><a href="#">Hello world!</a></li>
+                    </ul>
+                </div>
+
+                <!-- Archives -->
+                <div class="bg-white p-4 rounded shadow">
+                    <h3 class="font-semibold pl-3 border-l-4 py-1 border-lime-500">Archives</h3>
+                    <ul class="text-sm p-4">
+                        <li class="border-b py-2 border-gray-200 border-dashed"><a href="#">Seating Collection
+                                Inspiration Is Not Enough For People</a></li>
+                        <li class="border-b py-2 border-gray-200 border-dashed"><a href="#">Exterior Ideas: 10 Colored
+                                Fiber Garden Seats</a></li>
+                        <li class="border-b py-2 border-gray-200 border-dashed"><a href="#">Creative Water Features And
+                                Exterior Design</a></li>
+                        <li class="border-b py-2 border-gray-200 border-dashed"><a href="#">Hello world!</a></li>
+                    </ul>
+                </div>
+
+                <!-- Categories -->
+                <div class="bg-white p-4 rounded shadow">
+                    <h3 class="font-semibold pl-3 border-l-4 py-1 border-lime-500">Categories</h3>
+                    <ul class="text-sm p-4">
+                        <li class="border-b py-2 border-gray-200 border-dashed"><a href="#">Seating Collection
+                                Inspiration Is Not Enough For People</a></li>
+                        <li class="border-b py-2 border-gray-200 border-dashed"><a href="#">Exterior Ideas: 10 Colored
+                                Fiber Garden Seats</a></li>
+                        <li class="border-b py-2 border-gray-200 border-dashed"><a href="#">Creative Water Features And
+                                Exterior Design</a></li>
+                        <li class="border-b py-2 border-gray-200 border-dashed"><a href="#">Hello world!</a></li>
+                    </ul>
+                </div>
+
+                <!-- Meta -->
+                <div class="bg-white p-4 rounded shadow">
+                    <h3 class="font-semibold pl-3 border-l-4 py-1 border-lime-500">Metas</h3>
+                    <ul class="text-sm p-4">
+                        <li class="border-b py-2 border-gray-200 border-dashed"><a href="#">Seating Collection
+                                Inspiration Is Not Enough For People</a></li>
+                        <li class="border-b py-2 border-gray-200 border-dashed"><a href="#">Exterior Ideas: 10 Colored
+                                Fiber Garden Seats</a></li>
+                        <li class="border-b py-2 border-gray-200 border-dashed"><a href="#">Creative Water Features And
+                                Exterior Design</a></li>
+                        <li class="border-b py-2 border-gray-200 border-dashed"><a href="#">Hello world!</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <script src="./js/main.js"></script>
+</body>
+
+</html>

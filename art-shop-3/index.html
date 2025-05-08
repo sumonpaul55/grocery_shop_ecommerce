@@ -1,0 +1,1588 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grocery shop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- font awesome -->
+    <!-- <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- custom css -->
+    <link rel="stylesheet" href="./css/style.css">
+
+</head>
+
+<body class="font-sans">
+    <!-- Top Header -->
+    <div class="bg-lime-600 text-sm px-4 py-2 hidden md:block text-white">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-2">
+            <div class="flex items-center flex-wrap gap-4 justify-center">
+                <div class="flex items-center gap-1">
+                    <i class="fas fa-truck"></i>
+                    <span class="font-semibold">Free Delivery</span>
+                </div>
+                <div class="hidden md:block border-l border-white h-4"></div>
+                <div class="flex items-center gap-1">
+                    <i class="fas fa-undo"></i>
+                    <span class="font-semibold">Returns Policy</span>
+                </div>
+                <div class="hidden md:block border-l border-white h-4"></div>
+                <div class="flex items-center gap-4">
+                    <span class="font-semibold">Follow Us</span>
+                    <a href="#" class="hover:text-gray-200"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="hover:text-gray-200"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="hover:text-gray-200"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="hover:text-gray-200"><i class="fab fa-pinterest-p"></i></a>
+                </div>
+            </div>
+            <div class="text-white font-semibold">
+                <a href="#" class="hover:text-gray-200">Login</a>
+            </div>
+        </div>
+    </div>
+    <!-- Navbar top -->
+    <nav class="bg-white py-0 px-3 md:p-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center gap-2">
+            <div class="text-2xl font-bold">
+                <img src="https://demo.xpeedstudio.com/marketov2/grocery/wp-content/uploads/sites/12/2020/07/Logo.png"
+                    alt="">
+            </div>
+            <!-- search bar -->
+            <div
+                class="hidden md:flex flex-wrap items-center w-full max-w-2xl mx-auto bg-white rounded border border-slate-300 text-sm">
+                <!-- Search input -->
+                <input type="text" placeholder="Find your product" class="flex-grow px-4 py-2 outline-none" />
+
+                <!-- Dropdown -->
+                <div class="relative" id="dropdownButton">
+                    <button onclick="toggleDropdown()"
+                        class="flex items-center px-4 py-2 border-l border-gray-300 bg-white text-sm cursor-pointer">
+                        <span id="categoryLabel">Home Furnishings</span>
+                        <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                    </button>
+
+                    <ul id="categoryDropdown"
+                        class="absolute z-10 left-0 mt-1 bg-[#56b20f] text-white rounded shadow-lg text-sm hidden">
+                        <li>
+                            <button class="block w-full px-4 py-2 hover:bg-green-600 text-left"
+                                onclick="selectCategory('All Categories')">All Categories</button>
+                        </li>
+                        <li>
+                            <button class="block w-full px-4 py-2 hover:bg-green-600 text-left"
+                                onclick="selectCategory('Home Furnishings')">Home Furnishings</button>
+                        </li>
+                        <li>
+                            <button class="block w-full px-4 py-2 hover:bg-green-600 text-left"
+                                onclick="selectCategory('Beauty Products')">Beauty Products</button>
+                        </li>
+                        <li>
+                            <button class="block w-full px-4 py-2 hover:bg-green-600 text-left"
+                                onclick="selectCategory('Home Appliance')">Home Appliance</button>
+                        </li>
+                        <li>
+                            <button class="block w-full px-4 py-2 hover:bg-green-600 text-left"
+                                onclick="selectCategory('Office Elements')">Office Elements</button>
+                        </li>
+                        <li>
+                            <button class="block w-full px-4 py-2 hover:bg-green-600 text-left"
+                                onclick="selectCategory('Foods & Drinks')">Foods & Drinks</button>
+                        </li>
+                        <li>
+                            <button class="block w-full px-4 py-2 hover:bg-green-600 text-left"
+                                onclick="selectCategory('Grocery')">Grocery</button>
+                        </li>
+                        <li>
+                            <button class="block w-full px-4 py-2 hover:bg-green-600 text-left"
+                                onclick="selectCategory('Women Clothing')">Women Clothing</button>
+                        </li>
+                        <li>
+                            <button class="block w-full px-4 py-2 hover:bg-green-600 text-left"
+                                onclick="selectCategory('Mens Clothing')">Mens Clothing</button>
+                        </li>
+                        <li>
+                            <button class="block w-full px-4 py-2 hover:bg-green-600 text-left"
+                                onclick="selectCategory('Minimal Furniture')">Minimal Furniture</button>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Search button -->
+                <button
+                    class="bg-lime-600 text-white px-4 py-2 border border-slate-300 border-l-0 md:px-6 cursor-pointer">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            <!-- humbarg or menu icon -->
+            <!-- Toggle Button -->
+            <button id="toggleSidebar"
+                class="md:hidden text-lg border size-8 border-slate-400 rounded text-slate-800 m-4">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <div class="space-x-4 flex gap-0 md:gap-4 text-xl md:text-2xl">
+                <a href="#" class="relative">
+                    <i class="fa-regular fa-heart"></i>
+                    <small
+                        class="min-w-5 min-h-5 -right-2 -top-1 absolute rounded-full bg-gray-200 flex justify-center items-center text-xs font-bold">2</small>
+                </a>
+                <a href="viewCart.html" class="relative">
+                    <small
+                        class="min-w-5 min-h-5 -right-2 -top-2 absolute rounded-full bg-lime-600 text-white flex justify-center items-center text-xs font-bold">2</small>
+                    <i class="fa-solid fa-cart-plus"></i>
+                </a>
+            </div>
+        </div>
+        <!-- mobile sidebar -->
+        <!-- Sidebar -->
+        <div id="sidebar"
+            class="fixed top-0 left-0 z-[9999] h-full transform transition-transform duration-300 translate-x-[-100%] bg-black/60 w-full">
+            <div id="sidebarItemsParent" class="bg-white shadow-sm h-full w-64">
+                <div class="flex justify-between items-center p-4 border-b">
+                    <span class="text-xl font-bold text-slate-800">Marketo<span class="text-green-500">.</span></span>
+                    <button id="closeSidebar" class="text-slate-800 border rounded px-2 py-1">X</button>
+                </div>
+                <nav class="p-4 space-y-4">
+                    <a href="#" class="block">Home</a>
+                    <a href="#" class="block">Pages</a>
+                    <a href="#" class="block">Shop</a>
+                    <a href="#" class="block">Blog</a>
+                </nav>
+            </div>
+        </div>
+    </nav>
+    <section>
+        <div class="max-w-7xl mx-auto hidden md:block">
+            <nav class="flex items-center justify-between py-2">
+                <!-- All Categories -->
+                <div class="relative group">
+                    <button
+                        class="cursor-pointer flex items-center bg-lime-600 text-white px-4 py-2 font-semibold w-52">
+                        <!-- Button Icon -->
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                        All Categories
+                        <svg class="w-4 h-4 ml-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path
+                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414L10 13.414 5.293 8.707a1 1 0 010-1.414z" />
+                        </svg>
+                    </button>
+
+                    <!-- Dropdown -->
+                    <div class="absolute left-0 w-52 hidden group-hover:block z-50 pt-3">
+                        <div class="bg-white border rounded shadow relative border-slate-300">
+                            <!-- Category 1 with submenu -->
+                            <div class="relative group/category">
+                                <a href="#"
+                                    class="flex justify-between items-center px-4 py-2 hover:bg-gray-100 border-b border-slate-300">
+                                    <span>Category 1</span>
+                                    <span class="-rotate-90 group-hover/category:rotate-0 duration-300"><i
+                                            class="fa-solid fa-chevron-right"></i></span>
+                                </a>
+                                <!-- Submenu -->
+                                <div
+                                    class="absolute left-full top-0 hidden group-hover/category:grid border border-slate-300 rounded w-[700px] grid-cols-4 gap-3 z-50 bg-white p-2 px-5">
+                                    <div class="flex gap-3 flex-col text-xs">
+                                        <h3 class="font-bold text-base mb-1">Next menu</h3>
+                                        <a href="#">Next Nav</a>
+                                        <a href="#">Next Nav</a>
+                                        <a href="#">Next Nav</a>
+                                        <a href="#">Next Nav</a>
+                                    </div>
+                                    <div class="flex gap-3 flex-col text-xs">
+                                        <h3 class="font-bold text-base mb-1">Next menu</h3>
+                                        <a href="#">Next Nav</a>
+                                    </div>
+                                    <div class="flex gap-3 flex-col text-xs">
+                                        <h3 class="font-bold text-base mb-1">Next menu</h3>
+                                        <a href="#">Next Nav</a>
+                                        <a href="#">Next Nav</a>
+                                        <a href="#">Next Nav</a>
+                                    </div>
+                                    <div class="flex gap-3 flex-col text-xs">
+                                        <h3 class="font-bold text-base mb-1">Next menu</h3>
+                                        <a href="#">Next Nav</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Other categories -->
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 border-b border-slate-300">Category
+                                2</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 border-b border-slate-300">Category
+                                3</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Category 4</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Category 4</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Menu Items -->
+                <div class="flex space-x-6 text-sm font-medium text-gray-700">
+                    <div class="relative group">
+                        <a href="index.html" class="flex items-center hover:text-blue-600 font-semibold">
+                            Home
+                        </a>
+                    </div>
+                    <div class="relative group">
+                        <a href="#" class="flex items-center hover:text-blue-600 font-semibold">
+                            Pages
+                            <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414L10 13.414 5.293 8.707a1 1 0 010-1.414z" />
+                            </svg>
+                        </a>
+                        <!-- Submenu -->
+                        <div
+                            class="absolute left-0 top-full mt-2 min-w-[200px] opacity-0 group-hover:opacity-100 pt-4 invisible group-hover:visible group-hover:translate-y-0 translate-y-5 transition-all duration-300 z-50">
+                            <ul class="border border-slate-300 bg-white shadow-lg rounded">
+                                <li>
+                                    <a class="block px-4 py-2 hover:bg-slate-200 transition duration-200" href="aboutUs.html">About</a>
+                                </li>
+                                <li>
+                                    <a class="block px-4 py-2 hover:bg-slate-200 transition duration-200" href="contact.html">Contact</a>
+                                </li>
+                                <li>
+                                    <a class="block px-4 py-2 hover:bg-slate-200 transition duration-200" href="faq.html">faq</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="relative group">
+                        <a href="category.html" class="flex items-center hover:text-blue-600 font-semibold">
+                            Shop
+                        </a>
+                    </div>
+                    <div class="relative group">
+                        <a href="blog.html" class="flex items-center hover:text-blue-600 font-semibold">
+                            Blog
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Black Friday Banner -->
+                <div class="bg-[#FF6251] text-white px-10 py-2 text-center">
+                    <div class="text-sm font-bold leading-none">BLACK FRIDAY</div>
+                    <div class="text-xs font-medium">Get 45% Off!</div>
+                </div>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Swiper Slider -->
+    <section class="pb-10">
+        <div class="swiper mySwiper h-[250px] md:h-[400px] lg:h-[520px]">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="./img/grocery.jpeg" class="w-full h-full object-fill" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="./img/grocery.jpg" class="w-full h-full object-fill" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="./img/grocery.png" class="w-full h-full object-fill" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="py-6">
+        <div class="container mx-auto">
+            <div
+                class="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-6 border border-slate-300 mb-6 text-sm font-medium">
+                <!-- Filter Tabs -->
+                <button data-filter="grocery"
+                    class="cursor-pointer tab active-tab p-4 flex flex-col justify-center items-center w-full gap-2 py-10 relative">
+                    <img src="./img/icon1.png" alt="icon" class="w-auto">
+                    <span>Grocery</span>
+                    <span class="text-xs font-normal">20 Items Available</span>
+                    <span class="border w-20 border-slate-300 absolute -right-10 rotate-90"></span>
+                </button>
+                <button data-filter="food"
+                    class="cursor-pointer tab p-4 flex flex-col justify-center items-center w-full gap-2 py-10 relative">
+                    <img src="./img/icon2-1.png" alt="icon" class="w-auto">
+                    <span>Foods & Drinks</span>
+                    <span class="text-xs font-normal">5 Items Available</span>
+                    <span class="border w-20 border-slate-300 absolute -right-10 rotate-90"></span>
+                </button>
+                <button data-filter="office"
+                    class="cursor-pointer tab p-4 flex flex-col justify-center items-center w-full gap-2 py-10 relative">
+                    <img src="./img/icon3.png" alt="icon" class="w-auto">
+                    <span>Office Elements</span>
+                    <span class="text-xs font-normal">10 Items Available</span>
+                    <span class="border w-20 border-slate-300 absolute -right-10 rotate-90"></span>
+                </button>
+                <button data-filter="appliance"
+                    class="cursor-pointer tab p-4 flex flex-col justify-center items-center w-full gap-2 py-10 relative">
+                    <img src="./img/icon4.png" alt="icon" class="w-auto">
+                    <span>Home Appliance</span>
+                    <span class="text-xs font-normal">8 Items Available</span>
+                    <span class="border w-20 border-slate-300 absolute -right-10 rotate-90"></span>
+                </button>
+                <button data-filter="beauty"
+                    class="cursor-pointer tab p-4 flex flex-col justify-center items-center w-full gap-2 py-10 relative">
+                    <img src="./img/icon5.png" alt="icon" class="w-auto">
+                    <span>Beauty Products</span>
+                    <span class="text-xs font-normal">16 Items Available</span>
+                    <span class="border w-20 border-slate-300 absolute -right-10 rotate-90"></span>
+                </button>
+                <button data-filter="furnishings"
+                    class="cursor-pointer tab p-4 flex flex-col justify-center items-center w-full gap-2 py-10 relative">
+                    <img src="./img/icon4.png" alt="icon" class="w-auto">
+                    <span>Home Furnishings</span>
+                    <span class="text-xs font-normal">6 Items Available</span>
+                    <span class="border w-20 border-slate-300 absolute -right-10 rotate-90"></span>
+                </button>
+            </div>
+            <!-- Product Grid -->
+            <div id="productContainer" class="text-center py-5">
+                <!-- Example products -->
+                <div class="product grocery">
+                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+                        <!-- Product Card -->
+                        <a href="#" class="text-center block group transition duration-300">
+                            <img src="https://demo.xpeedstudio.com/marketov2/grocery/wp-content/uploads/sites/12/2018/10/14-min.jpg"
+                                alt="Product"
+                                class="mx-auto mb-2 w-36 object-contain transition duration-300 group-hover:scale-105 group-hover:brightness-110">
+                            <h3
+                                class="font-semibold lg:text-lg line-clamp-1 transition duration-300 group-hover:text-lime-600">
+                                Jumex Speaker</h3>
+                            <div class="flex gap-2 items-center justify-center mt-1">
+                                <p class="text-gray-400 line-through">$640.00</p>
+                                <p class="text-lime-600 font-bold">$340.00</p>
+                            </div>
+                        </a>
+
+                        <a href="#" class="text-center block group transition duration-300">
+                            <img src="https://demo.xpeedstudio.com/marketov2/grocery/wp-content/uploads/sites/12/2018/10/11-min.jpg"
+                                alt="Product"
+                                class="mx-auto mb-2 w-36 object-contain transition duration-300 group-hover:scale-105 group-hover:brightness-110">
+                            <h3
+                                class="font-semibold lg:text-lg line-clamp-1 transition duration-300 group-hover:text-lime-600">
+                                Golden Bluetooth</h3>
+                            <div class="flex gap-2 items-center justify-center mt-1">
+                                <p class="text-gray-400 line-through">$23.00</p>
+                                <p class="text-lime-600 font-bold">$12.00</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="product food hidden">
+                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+                        <!-- Product Card -->
+                        <a href="#" class="text-center block group transition duration-300">
+                            <img src="https://demo.xpeedstudio.com/marketov2/grocery/wp-content/uploads/sites/12/2018/10/11-min.jpg"
+                                alt="Product"
+                                class="mx-auto mb-2 w-36 object-contain transition duration-300 group-hover:scale-105 group-hover:brightness-110">
+                            <h3
+                                class="font-semibold lg:text-lg line-clamp-1 transition duration-300 group-hover:text-lime-600">
+                                Jumex Speaker</h3>
+                            <div class="flex gap-2 items-center justify-center mt-1">
+                                <p class="text-gray-400 line-through">$640.00</p>
+                                <p class="text-lime-600 font-bold">$340.00</p>
+                            </div>
+                        </a>
+
+                        <a href="#" class="text-center block group transition duration-300">
+                            <img src="https://demo.xpeedstudio.com/marketov2/grocery/wp-content/uploads/sites/12/2018/10/13-min-150x150.jpg"
+                                alt="Product"
+                                class="mx-auto mb-2 w-36 object-contain transition duration-300 group-hover:scale-105 group-hover:brightness-110">
+                            <h3
+                                class="font-semibold lg:text-lg line-clamp-1 transition duration-300 group-hover:text-lime-600">
+                                Golden Bluetooth</h3>
+                            <div class="flex gap-2 items-center justify-center mt-1">
+                                <p class="text-gray-400 line-through">$23.00</p>
+                                <p class="text-lime-600 font-bold">$12.00</p>
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+                <div class="product office hidden">
+                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+                        <!-- Product Card -->
+                        <a href="#" class="text-center block group transition duration-300">
+                            <img src="https://demo.xpeedstudio.com/marketov2/grocery/wp-content/uploads/sites/12/2018/10/14-min.jpg"
+                                alt="Product"
+                                class="mx-auto mb-2 w-36 object-contain transition duration-300 group-hover:scale-105 group-hover:brightness-110">
+                            <h3
+                                class="font-semibold lg:text-lg line-clamp-1 transition duration-300 group-hover:text-lime-600">
+                                Jumex Speaker</h3>
+                            <div class="flex gap-2 items-center justify-center mt-1">
+                                <p class="text-gray-400 line-through">$640.00</p>
+                                <p class="text-lime-600 font-bold">$340.00</p>
+                            </div>
+                        </a>
+
+                        <a href="#" class="text-center block group transition duration-300">
+                            <img src="https://demo.xpeedstudio.com/marketov2/grocery/wp-content/uploads/sites/12/2018/10/13-min-150x150.jpg"
+                                alt="Product"
+                                class="mx-auto mb-2 w-36 object-contain transition duration-300 group-hover:scale-105 group-hover:brightness-110">
+                            <h3
+                                class="font-semibold lg:text-lg line-clamp-1 transition duration-300 group-hover:text-lime-600">
+                                Golden Bluetooth</h3>
+                            <div class="flex gap-2 items-center justify-center mt-1">
+                                <p class="text-gray-400 line-through">$23.00</p>
+                                <p class="text-lime-600 font-bold">$12.00</p>
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+                <div class="product appliance hidden">
+                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+                        <!-- Product Card -->
+                        <a href="#" class="text-center block group transition duration-300">
+                            <img src="https://demo.xpeedstudio.com/marketov2/grocery/wp-content/uploads/sites/12/2018/10/11-min.jpg"
+                                alt="Product"
+                                class="mx-auto mb-2 w-36 object-contain transition duration-300 group-hover:scale-105 group-hover:brightness-110">
+                            <h3
+                                class="font-semibold lg:text-lg line-clamp-1 transition duration-300 group-hover:text-lime-600">
+                                Jumex Speaker</h3>
+                            <div class="flex gap-2 items-center justify-center mt-1">
+                                <p class="text-gray-400 line-through">$640.00</p>
+                                <p class="text-lime-600 font-bold">$340.00</p>
+                            </div>
+                        </a>
+
+                        <a href="#" class="text-center block group transition duration-300">
+                            <img src="https://demo.xpeedstudio.com/marketov2/grocery/wp-content/uploads/sites/12/2018/10/13-min-150x150.jpg"
+                                alt="Product"
+                                class="mx-auto mb-2 w-36 object-contain transition duration-300 group-hover:scale-105 group-hover:brightness-110">
+                            <h3
+                                class="font-semibold lg:text-lg line-clamp-1 transition duration-300 group-hover:text-lime-600">
+                                Golden Bluetooth</h3>
+                            <div class="flex gap-2 items-center justify-center mt-1">
+                                <p class="text-gray-400 line-through">$23.00</p>
+                                <p class="text-lime-600 font-bold">$12.00</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="product beauty hidden">
+                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+                        <!-- Product Card -->
+                        <a href="#" class="text-center block group transition duration-300">
+                            <img src="https://demo.xpeedstudio.com/marketov2/grocery/wp-content/uploads/sites/12/2018/10/14-min.jpg"
+                                alt="Product"
+                                class="mx-auto mb-2 w-36 object-contain transition duration-300 group-hover:scale-105 group-hover:brightness-110">
+                            <h3
+                                class="font-semibold lg:text-lg line-clamp-1 transition duration-300 group-hover:text-lime-600">
+                                Jumex Speaker</h3>
+                            <div class="flex gap-2 items-center justify-center mt-1">
+                                <p class="text-gray-400 line-through">$640.00</p>
+                                <p class="text-lime-600 font-bold">$340.00</p>
+                            </div>
+                        </a>
+
+                        <a href="#" class="text-center block group transition duration-300">
+                            <img src="https://demo.xpeedstudio.com/marketov2/grocery/wp-content/uploads/sites/12/2018/10/15-min.jpg"
+                                alt="Product"
+                                class="mx-auto mb-2 w-36 object-contain transition duration-300 group-hover:scale-105 group-hover:brightness-110">
+                            <h3
+                                class="font-semibold lg:text-lg line-clamp-1 transition duration-300 group-hover:text-lime-600">
+                                Golden Bluetooth</h3>
+                            <div class="flex gap-2 items-center justify-center mt-1">
+                                <p class="text-gray-400 line-through">$23.00</p>
+                                <p class="text-lime-600 font-bold">$12.00</p>
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+                <div class="product furnishings hidden">
+                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+                        <!-- Product Card -->
+                        <a href="#" class="text-center block group transition duration-300">
+                            <img src="https://demo.xpeedstudio.com/marketov2/grocery/wp-content/uploads/sites/12/2018/10/12-min-150x150.jpg"
+                                alt="Product"
+                                class="mx-auto mb-2 w-36 object-contain transition duration-300 group-hover:scale-105 group-hover:brightness-110">
+                            <h3
+                                class="font-semibold lg:text-lg line-clamp-1 transition duration-300 group-hover:text-lime-600">
+                                Jumex Speaker</h3>
+                            <div class="flex gap-2 items-center justify-center mt-1">
+                                <p class="text-gray-400 line-through">$640.00</p>
+                                <p class="text-lime-600 font-bold">$340.00</p>
+                            </div>
+                        </a>
+
+                        <a href="#" class="text-center block group transition duration-300">
+                            <img src="https://demo.xpeedstudio.com/marketov2/grocery/wp-content/uploads/sites/12/2018/10/13-min-150x150.jpg"
+                                alt="Product"
+                                class="mx-auto mb-2 w-36 object-contain transition duration-300 group-hover:scale-105 group-hover:brightness-110">
+                            <h3
+                                class="font-semibold lg:text-lg line-clamp-1 transition duration-300 group-hover:text-lime-600">
+                                Golden Bluetooth</h3>
+                            <div class="flex gap-2 items-center justify-center mt-1">
+                                <p class="text-gray-400 line-through">$23.00</p>
+                                <p class="text-lime-600 font-bold">$12.00</p>
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+    <section class="mt-9">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex items-end justify-between border-b border-slate-300">
+                <h2 class="text-lg md:text-3xl font-semibold pb-3">Trending Items</h2>
+                <!-- Tabs -->
+                <div class="flex gap-x-6 text-base md:text-lg font-bold">
+                    <button class="cursor-pointer -mb-[1px] pb-2 tab-btn activeTabBtn font-medium"
+                        data-filter="on-sell">On Sell</button>
+                    <button class="cursor-pointer -mb-[1px] pb-2 tab-btn font-medium" data-filter="hot-sell">Hot
+                        Sell</button>
+                    <button class="cursor-pointer -mb-[1px] pb-2 tab-btn font-medium" data-filter="trend">Trend</button>
+                    <button class="cursor-pointer -mb-[1px] pb-2 tab-btn font-medium" data-filter="best-sell">Best
+                        Sell</button>
+                </div>
+            </div>
+
+            <!-- Products Grid -->
+            <div>
+                <!-- Example Product -->
+                <div class="card on-sell">
+                    <div class="grid sm:grid-cols-2 lg:grid-cols-4 grid-cols-1 gap-4 py-4">
+                        <div class="relative group overflow-hidden border border-slate-300 p-4 hover:shadow transition">
+                            <a href="#">
+                                <div class="">
+                                    <img src="https://demo.xpeedstudio.com/marketov2/grocery/wp-content/uploads/sites/12/2018/08/2-min-300x300.jpg"
+                                        alt="Lipstick"
+                                        class="mx-auto w-72 object-contain mb-2 group-hover:opacity-80 duration-300">
+                                    <p class="text-gray-400 mb-1">Beauty Products Grocery Home Appliance</p>
+                                    <h4 class="font-semibold text-lg md:text-xl mb-1 hover:text-sky-600">Hento Deals
+                                        Security Tire Grid
+                                    </h4>
+                                </div>
+                            </a>
+                            <div class="flex gap-4 text-lg mt-2 justify-center">
+                                <span class="line-through text-gray-400 mr-2">$80.00</span>
+                                <span class="text-lime-600 font-bold">$59.00</span>
+                            </div>
+                            <button onclick="addToWishList(this)"
+                                class="absolute z-[999] text-lime-600 cursor-pointer -top-full group-hover:top-5 right-10 duration-400 text-2xl">
+                                <i class="fa-regular fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card hot-sell hidden">
+                    <div class="grid sm:grid-cols-2 lg:grid-cols-4 grid-cols-1 gap-4 py-4">
+                        <div class="relative group overflow-hidden border border-slate-300 p-4 hover:shadow transition">
+                            <a href="#">
+                                <div class="">
+                                    <img src="https://demo.xpeedstudio.com/marketov2/grocery/wp-content/uploads/sites/12/2018/10/14-min-300x300.jpg"
+                                        alt="Lipstick"
+                                        class="mx-auto w-72 object-contain mb-2 group-hover:opacity-80 duration-300">
+                                    <p class="text-gray-400 mb-1">Beauty Products Grocery Home Appliance</p>
+                                    <h4 class="font-semibold text-lg md:text-xl mb-1 hover:text-sky-600">Hento Deals
+                                        Security Tire Grid
+                                    </h4>
+
+                                </div>
+                            </a>
+                            <div class="flex gap-4 text-lg mt-2 justify-center">
+                                <span class="line-through text-gray-400 mr-2">$80.00</span>
+                                <span class="text-lime-600 font-bold">$59.00</span>
+                            </div>
+                            <button onclick="addToWishList(this)"
+                                class="absolute z-[999] text-lime-600 cursor-pointer -top-full group-hover:top-5 right-10 duration-400 text-2xl">
+                                <i class="fa-regular fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card trend hidden">
+                    <div class="grid sm:grid-cols-2 lg:grid-cols-4 grid-cols-1 gap-4 py-4">
+                        <div
+                            class="relative group overflow-hidden border border-slate-300 p-4 hover:shadow-lg transition">
+                            <a href="#">
+                                <div class="">
+                                    <img src="https://demo.xpeedstudio.com/marketov2/grocery/wp-content/uploads/sites/12/2018/08/2-min-300x300.jpg"
+                                        alt="Lipstick"
+                                        class="mx-auto w-72 object-contain mb-2 group-hover:opacity-80 duration-300">
+                                    <p class="text-gray-400 mb-1">Beauty Products Grocery Home Appliance</p>
+                                    <h4 class="font-semibold text-lg md:text-xl mb-1 hover:text-sky-600">Hento Deals
+                                        Security Tire Grid
+                                    </h4>
+                                </div>
+                            </a>
+                            <div class="flex gap-4 text-lg mt-2 justify-center">
+                                <span class="line-through text-gray-400 mr-2">$80.00</span>
+                                <span class="text-lime-600 font-bold">$59.00</span>
+                            </div>
+                            <button onclick="addToWishList(this)"
+                                class="absolute z-[999] text-lime-600 cursor-pointer -top-full group-hover:top-5 right-10 duration-400 text-2xl">
+                                <i class="fa-regular fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card best-sell hidden">
+                    <div class="grid sm:grid-cols-2 lg:grid-cols-4 grid-cols-1 gap-4 py-4">
+                        <div
+                            class="relative group overflow-hidden border border-slate-300 p-4 hover:shadow-lg transition">
+                            <a href="#">
+                                <div class="">
+                                    <img src="https://demo.xpeedstudio.com/marketov2/grocery/wp-content/uploads/sites/12/2018/10/14-min-300x300.jpg"
+                                        alt="Lipstick"
+                                        class="mx-auto w-72 object-contain mb-2 group-hover:opacity-80 duration-300">
+                                    <p class="text-gray-400 mb-1">Beauty Products Grocery Home Appliance</p>
+                                    <h4 class="font-semibold text-lg md:text-xl mb-1 hover:text-sky-600">Hento Deals
+                                        Security Tire Grid
+                                    </h4>
+
+                                </div>
+                            </a>
+                            <div class="flex gap-4 text-lg mt-2 justify-center">
+                                <span class="line-through text-gray-400 mr-2">$80.00</span>
+                                <span class="text-lime-600 font-bold">$59.00</span>
+                            </div>
+                            <button onclick="addToWishList(this)"
+                                class="absolute z-[999] text-lime-600 cursor-pointer -top-full group-hover:top-5 right-10 duration-400 text-2xl">
+                                <i class="fa-regular fa-heart"></i>
+                            </button>
+                        </div>
+                        <div
+                            class="relative group overflow-hidden border border-slate-300 p-4 hover:shadow-lg transition">
+                            <a href="#">
+                                <div class="">
+                                    <img src="https://demo.xpeedstudio.com/marketov2/grocery/wp-content/uploads/sites/12/2018/10/14-min-300x300.jpg"
+                                        alt="Lipstick"
+                                        class="mx-auto w-72 object-contain mb-2 group-hover:opacity-80 duration-300">
+                                    <p class="text-gray-400 mb-1">Beauty Products Grocery Home Appliance</p>
+                                    <h4 class="font-semibold text-lg md:text-xl mb-1 hover:text-sky-600">Hento Deals
+                                        Security Tire Grid
+                                    </h4>
+
+                                </div>
+                            </a>
+                            <div class="flex gap-4 text-lg mt-2 justify-center">
+                                <span class="line-through text-gray-400 mr-2">$80.00</span>
+                                <span class="text-lime-600 font-bold">$59.00</span>
+                            </div>
+                            <button onclick="addToWishList(this)"
+                                class="absolute z-[999] text-lime-600 cursor-pointer -top-full group-hover:top-5 right-10 duration-400 text-2xl">
+                                <i class="fa-regular fa-heart"></i>
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-10">
+        <div class="max-w-7xl mx-auto">
+            <div
+                class="py-10 mx-2 shadow-lg rounded-lg grid grid-cols-2 sm:grid-cols-3 gap-y-10 border border-slate-50 lg:grid-cols-5 justify-between items-center space-x-4 px-5">
+                <div class="text-center border-r border-slate-300">
+                    <p class="text-xl font-semibold">Free Delivery</p>
+                    <p class="text-sm text-gray-600">from $78</p>
+                </div>
+                <div class="text-center border-r border-slate-300">
+                    <p class="text-xl font-semibold">99% Customer</p>
+                    <p class="text-sm text-gray-600">feedbacks</p>
+                </div>
+                <div class="text-center border-r border-slate-300">
+                    <p class="text-xl font-semibold">10 Days</p>
+                    <p class="text-sm text-gray-600">for free return</p>
+                </div>
+                <div class="text-center border-r border-slate-300">
+                    <p class="text-xl font-semibold">Payment</p>
+                    <p class="text-sm text-gray-600">secure system</p>
+                </div>
+                <div class="text-center">
+                    <p class="text-xl font-semibold">24/7</p>
+                    <p class="text-sm text-gray-600">online supports</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="max-w-7xl mx-auto">
+            <img class="w-full"
+                src="https://demo.xpeedstudio.com/marketov2/grocery/wp-content/uploads/sites/12/2018/10/ad-min.png"
+                alt="advertise">
+        </div>
+    </section>
+    <!-- discover more -->
+    <section class="py-20 px-3">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex items-end justify-between border-b border-slate-300">
+                <h2 class="text-sm sm:text-lg md:text-3xl font-semibold pb-3">Discover More</h2>
+                <!-- Tabs -->
+                <div class="flex gap-x-6 text-base md:text-lg font-bold">
+                    <button class="text-xs sm:text-base cursor-pointer -mb-[1px] pb-2 tab-btn activeTabBtn font-medium"
+                        data-filter="on-sell">On Sell</button>
+                    <button class="text-xs sm:text-base cursor-pointer -mb-[1px] pb-2 tab-btn font-medium"
+                        data-filter="hot-sell">Hot
+                        Sell</button>
+                    <button class="text-xs sm:text-base cursor-pointer -mb-[1px] pb-2 tab-btn font-medium"
+                        data-filter="trend">Trend</button>
+                    <button class="text-xs sm:text-base cursor-pointer -mb-[1px] pb-2 tab-btn font-medium"
+                        data-filter="best-sell">Best
+                        Sell</button>
+                </div>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="mt-4">
+                <!-- Example Product -->
+                <div class="card on-sell">
+                    <div class="swiper discoverOnSell">
+                        <div class="swiper-wrapper">
+                            <div
+                                class="swiper-slide relative group overflow-hidden border border-slate-300 p-4 hover:shadow transition">
+                                <a href="#">
+                                    <div class="">
+                                        <img src="https://demo.xpeedstudio.com/marketov2/grocery/wp-content/uploads/sites/12/2018/08/2-min-300x300.jpg"
+                                            alt="Lipstick"
+                                            class="mx-auto w-72 object-contain mb-2 group-hover:opacity-80 duration-300">
+                                        <p class="text-gray-400 mb-1">Beauty Products Grocery Home Appliance</p>
+                                        <h4 class="font-semibold text-lg md:text-xl mb-1 hover:text-sky-600">Hento Deals
+                                            Security Tire Grid
+                                        </h4>
+                                    </div>
+                                </a>
+                                <div class="flex gap-4 text-lg mt-2 justify-center">
+                                    <span class="line-through text-gray-400 mr-2">$80.00</span>
+                                    <span class="text-lime-600 font-bold">$59.00</span>
+                                </div>
+                                <button onclick="addToWishList(this)"
+                                    class="absolute z-[999] text-lime-600 cursor-pointer -top-full group-hover:top-5 right-10 duration-400 text-2xl">
+                                    <i class="fa-regular fa-heart"></i>
+                                </button>
+                            </div>
+                            <div
+                                class="swiper-slide relative group overflow-hidden border border-slate-300 p-4 hover:shadow transition">
+                                <a href="#">
+                                    <div class="">
+                                        <img src="https://demo.xpeedstudio.com/marketov2/grocery/wp-content/uploads/sites/12/2018/10/3-min-300x300.jpg"
+                                            alt="Lipstick"
+                                            class="mx-auto w-72 object-contain mb-2 group-hover:opacity-80 duration-300">
+                                        <p class="text-gray-400 mb-1">Beauty Products Grocery Home Appliance</p>
+                                        <h4 class="font-semibold text-lg md:text-xl mb-1 hover:text-sky-600">Hento Deals
+                                            Security Tire Grid
+                                        </h4>
+                                    </div>
+                                </a>
+                                <div class="flex gap-4 text-lg mt-2 justify-center">
+                                    <span class="line-through text-gray-400 mr-2">$80.00</span>
+                                    <span class="text-lime-600 font-bold">$59.00</span>
+                                </div>
+                                <button onclick="addToWishList(this)"
+                                    class="absolute z-[999] text-lime-600 cursor-pointer -top-full group-hover:top-5 right-10 duration-400 text-2xl">
+                                    <i class="fa-regular fa-heart"></i>
+                                </button>
+                            </div>
+                            <div
+                                class="swiper-slide relative group overflow-hidden border border-slate-300 p-4 hover:shadow transition">
+                                <a href="#">
+                                    <div class="">
+                                        <img src="https://demo.xpeedstudio.com/marketov2/grocery/wp-content/uploads/sites/12/2018/10/3-min-300x300.jpg"
+                                            alt="Lipstick"
+                                            class="mx-auto w-72 object-contain mb-2 group-hover:opacity-80 duration-300">
+                                        <p class="text-gray-400 mb-1">Beauty Products Grocery Home Appliance</p>
+                                        <h4 class="font-semibold text-lg md:text-xl mb-1 hover:text-sky-600">Hento Deals
+                                            Security Tire Grid
+                                        </h4>
+                                    </div>
+                                </a>
+                                <div class="flex gap-4 text-lg mt-2 justify-center">
+                                    <span class="line-through text-gray-400 mr-2">$80.00</span>
+                                    <span class="text-lime-600 font-bold">$59.00</span>
+                                </div>
+                                <button onclick="addToWishList(this)"
+                                    class="absolute z-[999] text-lime-600 cursor-pointer -top-full group-hover:top-5 right-10 duration-400 text-2xl">
+                                    <i class="fa-regular fa-heart"></i>
+                                </button>
+                            </div>
+                            <div
+                                class="swiper-slide relative group overflow-hidden border border-slate-300 p-4 hover:shadow transition">
+                                <a href="#">
+                                    <div class="">
+                                        <img src="https://demo.xpeedstudio.com/marketov2/grocery/wp-content/uploads/sites/12/2018/08/8-300x300.jpg"
+                                            alt="Lipstick"
+                                            class="mx-auto w-72 object-contain mb-2 group-hover:opacity-80 duration-300">
+                                        <p class="text-gray-400 mb-1">Beauty Products Grocery Home Appliance</p>
+                                        <h4 class="font-semibold text-lg md:text-xl mb-1 hover:text-sky-600">Hento Deals
+                                            Security Tire Grid
+                                        </h4>
+                                    </div>
+                                </a>
+                                <div class="flex gap-4 text-lg mt-2 justify-center">
+                                    <span class="line-through text-gray-400 mr-2">$80.00</span>
+                                    <span class="text-lime-600 font-bold">$59.00</span>
+                                </div>
+                                <button onclick="addToWishList(this)"
+                                    class="absolute z-[999] text-lime-600 cursor-pointer -top-full group-hover:top-5 right-10 duration-400 text-2xl">
+                                    <i class="fa-regular fa-heart"></i>
+                                </button>
+                            </div>
+                            <div
+                                class="swiper-slide relative group overflow-hidden border border-slate-300 p-4 hover:shadow transition">
+                                <a href="#">
+                                    <div class="">
+                                        <img src="https://demo.xpeedstudio.com/marketov2/grocery/wp-content/uploads/sites/12/2018/08/7-300x300.jpg"
+                                            alt="Lipstick"
+                                            class="mx-auto w-72 object-contain mb-2 group-hover:opacity-80 duration-300">
+                                        <p class="text-gray-400 mb-1">Beauty Products Grocery Home Appliance</p>
+                                        <h4 class="font-semibold text-lg md:text-xl mb-1 hover:text-sky-600">Hento Deals
+                                            Security Tire Grid
+                                        </h4>
+                                    </div>
+                                </a>
+                                <div class="flex gap-4 text-lg mt-2 justify-center">
+                                    <span class="line-through text-gray-400 mr-2">$80.00</span>
+                                    <span class="text-lime-600 font-bold">$59.00</span>
+                                </div>
+                                <button onclick="addToWishList(this)"
+                                    class="absolute z-[999] text-lime-600 cursor-pointer -top-full group-hover:top-5 right-10 duration-400 text-2xl">
+                                    <i class="fa-regular fa-heart"></i>
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card hot-sell hidden">
+                    <div class="swiper discoverOnSell">
+                        <div class="swiper-wrapper">
+                            <div
+                                class="swiper-slide relative group overflow-hidden border border-slate-300 p-4 hover:shadow transition">
+                                <a href="#">
+                                    <div class="">
+                                        <img src="https://demo.xpeedstudio.com/marketov2/grocery/wp-content/uploads/sites/12/2018/08/7-300x300.jpg"
+                                            alt="Lipstick"
+                                            class="mx-auto w-72 object-contain mb-2 group-hover:opacity-80 duration-300">
+                                        <p class="text-gray-400 mb-1">Beauty Products Grocery Home Appliance</p>
+                                        <h4 class="font-semibold text-lg md:text-xl mb-1 hover:text-sky-600">Hento Deals
+                                            Security Tire Grid
+                                        </h4>
+                                    </div>
+                                </a>
+                                <div class="flex gap-4 text-lg mt-2 justify-center">
+                                    <span class="line-through text-gray-400 mr-2">$80.00</span>
+                                    <span class="text-lime-600 font-bold">$59.00</span>
+                                </div>
+                                <button onclick="addToWishList(this)"
+                                    class="absolute z-[999] text-lime-600 cursor-pointer -top-full group-hover:top-5 right-10 duration-400 text-2xl">
+                                    <i class="fa-regular fa-heart"></i>
+                                </button>
+                            </div>
+                            <div
+                                class="swiper-slide relative group overflow-hidden border border-slate-300 p-4 hover:shadow transition">
+                                <a href="#">
+                                    <div class="">
+                                        <img src="https://demo.xpeedstudio.com/marketov2/grocery/wp-content/uploads/sites/12/2018/08/2-min-300x300.jpg"
+                                            alt="Lipstick"
+                                            class="mx-auto w-72 object-contain mb-2 group-hover:opacity-80 duration-300">
+                                        <p class="text-gray-400 mb-1">Beauty Products Grocery Home Appliance</p>
+                                        <h4 class="font-semibold text-lg md:text-xl mb-1 hover:text-sky-600">Hento Deals
+                                            Security Tire Grid
+                                        </h4>
+                                    </div>
+                                </a>
+                                <div class="flex gap-4 text-lg mt-2 justify-center">
+                                    <span class="line-through text-gray-400 mr-2">$80.00</span>
+                                    <span class="text-lime-600 font-bold">$59.00</span>
+                                </div>
+                                <button onclick="addToWishList(this)"
+                                    class="absolute z-[999] text-lime-600 cursor-pointer -top-full group-hover:top-5 right-10 duration-400 text-2xl">
+                                    <i class="fa-regular fa-heart"></i>
+                                </button>
+                            </div>
+                            <div
+                                class="swiper-slide relative group overflow-hidden border border-slate-300 p-4 hover:shadow transition">
+                                <a href="#">
+                                    <div class="">
+                                        <img src="https://demo.xpeedstudio.com/marketov2/grocery/wp-content/uploads/sites/12/2018/10/3-min-300x300.jpg"
+                                            alt="Lipstick"
+                                            class="mx-auto w-72 object-contain mb-2 group-hover:opacity-80 duration-300">
+                                        <p class="text-gray-400 mb-1">Beauty Products Grocery Home Appliance</p>
+                                        <h4 class="font-semibold text-lg md:text-xl mb-1 hover:text-sky-600">Hento Deals
+                                            Security Tire Grid
+                                        </h4>
+                                    </div>
+                                </a>
+                                <div class="flex gap-4 text-lg mt-2 justify-center">
+                                    <span class="line-through text-gray-400 mr-2">$80.00</span>
+                                    <span class="text-lime-600 font-bold">$59.00</span>
+                                </div>
+                                <button onclick="addToWishList(this)"
+                                    class="absolute z-[999] text-lime-600 cursor-pointer -top-full group-hover:top-5 right-10 duration-400 text-2xl">
+                                    <i class="fa-regular fa-heart"></i>
+                                </button>
+                            </div>
+                            <div
+                                class="swiper-slide relative group overflow-hidden border border-slate-300 p-4 hover:shadow transition">
+                                <a href="#">
+                                    <div class="">
+                                        <img src="https://demo.xpeedstudio.com/marketov2/grocery/wp-content/uploads/sites/12/2018/10/3-min-300x300.jpg"
+                                            alt="Lipstick"
+                                            class="mx-auto w-72 object-contain mb-2 group-hover:opacity-80 duration-300">
+                                        <p class="text-gray-400 mb-1">Beauty Products Grocery Home Appliance</p>
+                                        <h4 class="font-semibold text-lg md:text-xl mb-1 hover:text-sky-600">Hento Deals
+                                            Security Tire Grid
+                                        </h4>
+                                    </div>
+                                </a>
+                                <div class="flex gap-4 text-lg mt-2 justify-center">
+                                    <span class="line-through text-gray-400 mr-2">$80.00</span>
+                                    <span class="text-lime-600 font-bold">$59.00</span>
+                                </div>
+                                <button onclick="addToWishList(this)"
+                                    class="absolute z-[999] text-lime-600 cursor-pointer -top-full group-hover:top-5 right-10 duration-400 text-2xl">
+                                    <i class="fa-regular fa-heart"></i>
+                                </button>
+                            </div>
+                            <div
+                                class="swiper-slide relative group overflow-hidden border border-slate-300 p-4 hover:shadow transition">
+                                <a href="#">
+                                    <div class="">
+                                        <img src="https://demo.xpeedstudio.com/marketov2/grocery/wp-content/uploads/sites/12/2018/08/8-300x300.jpg"
+                                            alt="Lipstick"
+                                            class="mx-auto w-72 object-contain mb-2 group-hover:opacity-80 duration-300">
+                                        <p class="text-gray-400 mb-1">Beauty Products Grocery Home Appliance</p>
+                                        <h4 class="font-semibold text-lg md:text-xl mb-1 hover:text-sky-600">Hento Deals
+                                            Security Tire Grid
+                                        </h4>
+                                    </div>
+                                </a>
+                                <div class="flex gap-4 text-lg mt-2 justify-center">
+                                    <span class="line-through text-gray-400 mr-2">$80.00</span>
+                                    <span class="text-lime-600 font-bold">$59.00</span>
+                                </div>
+                                <button onclick="addToWishList(this)"
+                                    class="absolute z-[999] text-lime-600 cursor-pointer -top-full group-hover:top-5 right-10 duration-400 text-2xl">
+                                    <i class="fa-regular fa-heart"></i>
+                                </button>
+                            </div>
+                            <div
+                                class="swiper-slide relative group overflow-hidden border border-slate-300 p-4 hover:shadow transition">
+                                <a href="#">
+                                    <div class="">
+                                        <img src="https://demo.xpeedstudio.com/marketov2/grocery/wp-content/uploads/sites/12/2018/08/7-300x300.jpg"
+                                            alt="Lipstick"
+                                            class="mx-auto w-72 object-contain mb-2 group-hover:opacity-80 duration-300">
+                                        <p class="text-gray-400 mb-1">Beauty Products Grocery Home Appliance</p>
+                                        <h4 class="font-semibold text-lg md:text-xl mb-1 hover:text-sky-600">Hento Deals
+                                            Security Tire Grid
+                                        </h4>
+                                    </div>
+                                </a>
+                                <div class="flex gap-4 text-lg mt-2 justify-center">
+                                    <span class="line-through text-gray-400 mr-2">$80.00</span>
+                                    <span class="text-lime-600 font-bold">$59.00</span>
+                                </div>
+                                <button onclick="addToWishList(this)"
+                                    class="absolute z-[999] text-lime-600 cursor-pointer -top-full group-hover:top-5 right-10 duration-400 text-2xl">
+                                    <i class="fa-regular fa-heart"></i>
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card trend hidden">
+                    <div class="swiper discoverOnSell">
+                        <div class="swiper-wrapper">
+                            <div
+                                class="swiper-slide relative group overflow-hidden border border-slate-300 p-4 hover:shadow transition">
+                                <a href="#">
+                                    <div class="">
+                                        <img src="https://demo.xpeedstudio.com/marketov2/grocery/wp-content/uploads/sites/12/2018/08/7-300x300.jpg"
+                                            alt="Lipstick"
+                                            class="mx-auto w-72 object-contain mb-2 group-hover:opacity-80 duration-300">
+                                        <p class="text-gray-400 mb-1">Beauty Products Grocery Home Appliance</p>
+                                        <h4 class="font-semibold text-lg md:text-xl mb-1 hover:text-sky-600">Hento Deals
+                                            Security Tire Grid
+                                        </h4>
+                                    </div>
+                                </a>
+                                <div class="flex gap-4 text-lg mt-2 justify-center">
+                                    <span class="line-through text-gray-400 mr-2">$80.00</span>
+                                    <span class="text-lime-600 font-bold">$59.00</span>
+                                </div>
+                                <button onclick="addToWishList(this)"
+                                    class="absolute z-[999] text-lime-600 cursor-pointer -top-full group-hover:top-5 right-10 duration-400 text-2xl">
+                                    <i class="fa-regular fa-heart"></i>
+                                </button>
+                            </div>
+                            <div
+                                class="swiper-slide relative group overflow-hidden border border-slate-300 p-4 hover:shadow transition">
+                                <a href="#">
+                                    <div class="">
+                                        <img src="https://demo.xpeedstudio.com/marketov2/grocery/wp-content/uploads/sites/12/2018/08/2-min-300x300.jpg"
+                                            alt="Lipstick"
+                                            class="mx-auto w-72 object-contain mb-2 group-hover:opacity-80 duration-300">
+                                        <p class="text-gray-400 mb-1">Beauty Products Grocery Home Appliance</p>
+                                        <h4 class="font-semibold text-lg md:text-xl mb-1 hover:text-sky-600">Hento Deals
+                                            Security Tire Grid
+                                        </h4>
+                                    </div>
+                                </a>
+                                <div class="flex gap-4 text-lg mt-2 justify-center">
+                                    <span class="line-through text-gray-400 mr-2">$80.00</span>
+                                    <span class="text-lime-600 font-bold">$59.00</span>
+                                </div>
+                                <button onclick="addToWishList(this)"
+                                    class="absolute z-[999] text-lime-600 cursor-pointer -top-full group-hover:top-5 right-10 duration-400 text-2xl">
+                                    <i class="fa-regular fa-heart"></i>
+                                </button>
+                            </div>
+                            <div
+                                class="swiper-slide relative group overflow-hidden border border-slate-300 p-4 hover:shadow transition">
+                                <a href="#">
+                                    <div class="">
+                                        <img src="https://demo.xpeedstudio.com/marketov2/grocery/wp-content/uploads/sites/12/2018/10/3-min-300x300.jpg"
+                                            alt="Lipstick"
+                                            class="mx-auto w-72 object-contain mb-2 group-hover:opacity-80 duration-300">
+                                        <p class="text-gray-400 mb-1">Beauty Products Grocery Home Appliance</p>
+                                        <h4 class="font-semibold text-lg md:text-xl mb-1 hover:text-sky-600">Hento Deals
+                                            Security Tire Grid
+                                        </h4>
+                                    </div>
+                                </a>
+                                <div class="flex gap-4 text-lg mt-2 justify-center">
+                                    <span class="line-through text-gray-400 mr-2">$80.00</span>
+                                    <span class="text-lime-600 font-bold">$59.00</span>
+                                </div>
+                                <button onclick="addToWishList(this)"
+                                    class="absolute z-[999] text-lime-600 cursor-pointer -top-full group-hover:top-5 right-10 duration-400 text-2xl">
+                                    <i class="fa-regular fa-heart"></i>
+                                </button>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card best-sell hidden">
+                    <div class="swiper discoverOnSell">
+                        <div class="swiper-wrapper">
+                            <div
+                                class="swiper-slide relative group overflow-hidden border border-slate-300 p-4 hover:shadow transition">
+                                <a href="#">
+                                    <div class="">
+                                        <img src="https://demo.xpeedstudio.com/marketov2/grocery/wp-content/uploads/sites/12/2018/08/7-300x300.jpg"
+                                            alt="Lipstick"
+                                            class="mx-auto w-72 object-contain mb-2 group-hover:opacity-80 duration-300">
+                                        <p class="text-gray-400 mb-1">Beauty Products Grocery Home Appliance</p>
+                                        <h4 class="font-semibold text-lg md:text-xl mb-1 hover:text-sky-600">Hento Deals
+                                            Security Tire Grid
+                                        </h4>
+                                    </div>
+                                </a>
+                                <div class="flex gap-4 text-lg mt-2 justify-center">
+                                    <span class="line-through text-gray-400 mr-2">$80.00</span>
+                                    <span class="text-lime-600 font-bold">$59.00</span>
+                                </div>
+                                <button onclick="addToWishList(this)"
+                                    class="absolute z-[999] text-lime-600 cursor-pointer -top-full group-hover:top-5 right-10 duration-400 text-2xl">
+                                    <i class="fa-regular fa-heart"></i>
+                                </button>
+                            </div>
+                            <div
+                                class="swiper-slide relative group overflow-hidden border border-slate-300 p-4 hover:shadow transition">
+                                <a href="#">
+                                    <div class="">
+                                        <img src="https://demo.xpeedstudio.com/marketov2/grocery/wp-content/uploads/sites/12/2018/08/2-min-300x300.jpg"
+                                            alt="Lipstick"
+                                            class="mx-auto w-72 object-contain mb-2 group-hover:opacity-80 duration-300">
+                                        <p class="text-gray-400 mb-1">Beauty Products Grocery Home Appliance</p>
+                                        <h4 class="font-semibold text-lg md:text-xl mb-1 hover:text-sky-600">Hento Deals
+                                            Security Tire Grid
+                                        </h4>
+                                    </div>
+                                </a>
+                                <div class="flex gap-4 text-lg mt-2 justify-center">
+                                    <span class="line-through text-gray-400 mr-2">$80.00</span>
+                                    <span class="text-lime-600 font-bold">$59.00</span>
+                                </div>
+                                <button onclick="addToWishList(this)"
+                                    class="absolute z-[999] text-lime-600 cursor-pointer -top-full group-hover:top-5 right-10 duration-400 text-2xl">
+                                    <i class="fa-regular fa-heart"></i>
+                                </button>
+                            </div>
+                            <div
+                                class="swiper-slide relative group overflow-hidden border border-slate-300 p-4 hover:shadow transition">
+                                <a href="#">
+                                    <div class="">
+                                        <img src="https://demo.xpeedstudio.com/marketov2/grocery/wp-content/uploads/sites/12/2018/08/7-300x300.jpg"
+                                            alt="Lipstick"
+                                            class="mx-auto w-72 object-contain mb-2 group-hover:opacity-80 duration-300">
+                                        <p class="text-gray-400 mb-1">Beauty Products Grocery Home Appliance</p>
+                                        <h4 class="font-semibold text-lg md:text-xl mb-1 hover:text-sky-600">Hento Deals
+                                            Security Tire Grid
+                                        </h4>
+                                    </div>
+                                </a>
+                                <div class="flex gap-4 text-lg mt-2 justify-center">
+                                    <span class="line-through text-gray-400 mr-2">$80.00</span>
+                                    <span class="text-lime-600 font-bold">$59.00</span>
+                                </div>
+                                <button onclick="addToWishList(this)"
+                                    class="absolute z-[999] text-lime-600 cursor-pointer -top-full group-hover:top-5 right-10 duration-400 text-2xl">
+                                    <i class="fa-regular fa-heart"></i>
+                                </button>
+                            </div>
+                            <div
+                                class="swiper-slide relative group overflow-hidden border border-slate-300 p-4 hover:shadow transition">
+                                <a href="#">
+                                    <div class="">
+                                        <img src="https://demo.xpeedstudio.com/marketov2/grocery/wp-content/uploads/sites/12/2018/10/3-min-300x300.jpg"
+                                            alt="Lipstick"
+                                            class="mx-auto w-72 object-contain mb-2 group-hover:opacity-80 duration-300">
+                                        <p class="text-gray-400 mb-1">Beauty Products Grocery Home Appliance</p>
+                                        <h4 class="font-semibold text-lg md:text-xl mb-1 hover:text-sky-600">Hento Deals
+                                            Security Tire Grid
+                                        </h4>
+                                    </div>
+                                </a>
+                                <div class="flex gap-4 text-lg mt-2 justify-center">
+                                    <span class="line-through text-gray-400 mr-2">$80.00</span>
+                                    <span class="text-lime-600 font-bold">$59.00</span>
+                                </div>
+                                <button onclick="addToWishList(this)"
+                                    class="absolute z-[999] text-lime-600 cursor-pointer -top-full group-hover:top-5 right-10 duration-400 text-2xl">
+                                    <i class="fa-regular fa-heart"></i>
+                                </button>
+                            </div>
+
+                            <div
+                                class="swiper-slide relative group overflow-hidden border border-slate-300 p-4 hover:shadow transition">
+                                <a href="#">
+                                    <div class="">
+                                        <img src="https://demo.xpeedstudio.com/marketov2/grocery/wp-content/uploads/sites/12/2018/08/7-300x300.jpg"
+                                            alt="Lipstick"
+                                            class="mx-auto w-72 object-contain mb-2 group-hover:opacity-80 duration-300">
+                                        <p class="text-gray-400 mb-1">Beauty Products Grocery Home Appliance</p>
+                                        <h4 class="font-semibold text-lg md:text-xl mb-1 hover:text-sky-600">Hento Deals
+                                            Security Tire Grid
+                                        </h4>
+                                    </div>
+                                </a>
+                                <div class="flex gap-4 text-lg mt-2 justify-center">
+                                    <span class="line-through text-gray-400 mr-2">$80.00</span>
+                                    <span class="text-lime-600 font-bold">$59.00</span>
+                                </div>
+                                <button onclick="addToWishList(this)"
+                                    class="absolute z-[999] text-lime-600 cursor-pointer -top-full group-hover:top-5 right-10 duration-400 text-2xl">
+                                    <i class="fa-regular fa-heart"></i>
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- advertise section -->
+    <section class="py-10">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-10">
+                <div class="relative border border-slate-100 rounded-lg overflow-hidden">
+                    <a href="#">
+                        <img class="w-full" src="https://i.postimg.cc/6Q0nHXKt/grapse.png" alt="advetise">
+                    </a>
+                    <div class="absolute right-1/4   bottom-12">
+                        <a href="#"
+                            class="bg-black hover:bg-white hover:text-black duration-300 text-white rounded-full px-4 py-2 md:py-3 md:px-9">Shop
+                            Now</a>
+                    </div>
+                </div>
+                <div class="relative border border-slate-100 rounded-lg overflow-hidden">
+                    <a href="#">
+                        <img class="w-full" src="https://i.postimg.cc/6Q0nHXKt/grapse.png" alt="advetise">
+                    </a>
+                    <div class="absolute right-1/4   bottom-12">
+                        <a href="#"
+                            class="bg-black hover:bg-white hover:text-black duration-300 text-white rounded-full px-4 py-2 md:py-3 md:px-9">Shop
+                            Now</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!--  -->
+    <section class="py-24 bg-gradient-to-b from-green-100 via-green-50 to-green-100">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 text-center gap-6">
+
+            <div class="flex flex-col gap-3">
+                <p class="text-lime-600 font-semibold mb-1 text-lg md:text-2xl">Happy Customers</p>
+                <h2 class="text-xl md:text-2xl lg:text-3xl font-bold text-black">1,200 +</h2>
+            </div>
+
+            <div class="flex flex-col gap-3">
+                <p class="text-lime-600 font-semibold mb-1 text-lg md:text-2xl">Customer Satisfaction</p>
+                <h2 class="text-xl md:text-2xl lg:text-3xl font-bold text-black">100 %</h2>
+            </div>
+
+            <div class="flex flex-col gap-3">
+                <p class="text-lime-600 font-semibold mb-1 text-lg md:text-2xl">Organic Products</p>
+                <h2 class="text-xl md:text-2xl lg:text-3xl font-bold text-black">1 M+</h2>
+            </div>
+
+            <div class="flex flex-col gap-3">
+                <p class="text-lime-600 font-semibold mb-1 text-lg md:text-2xl">Awards Winning</p>
+                <h2 class="text-xl md:text-2xl lg:text-3xl font-bold text-black">778 +</h2>
+            </div>
+
+        </div>
+    </section>
+    <!-- aritcle or blog section -->
+    <section class="py-24 px-4 max-w-7xl mx-auto">
+        <div class="flex justify-between items-center mb-8">
+            <h2 class="text-xl md:text-2xl font-semibold text-gray-800">Marketplace News</h2>
+            <a href="#" class="text-green-600 hover:underline text-sm font-medium">View All Articles</a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Article Card 1 -->
+            <div class="bg-white border rounded shadow-sm overflow-hidden border-slate-300">
+                <a href="#">
+                    <img src="https://demo.xpeedstudio.com/marketov2/grocery/wp-content/uploads/sites/12/2018/04/news-4-e1594817480976.jpg"
+                        alt="News 1" class="w-full">
+                </a>
+                <div class="p-4 md:p-8">
+                    <a href="#" class="text-blue-600 text-sm font-medium mb-1 block py-3">Electronics</a>
+                    <a href="#"
+                        class="hover:text-lime-700 text-lg sm:text-xl md:text-2xl font-semibold text-gray-900 my-4">
+                        Seating
+                        Collection Inspiration Is Not Enough For People
+                    </a>
+                    <div class="flex items-center text-gray-500 text-sm space-x-4">
+                        <div class="flex items-center gap-1">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2z" />
+                            </svg>
+                            <span>0</span>
+                        </div>
+                        <div class="flex items-center gap-1">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path d="M12 8v4l3 3" />
+                                <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" />
+                            </svg>
+                            <span>May 1, 2018</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Article Card 2 -->
+            <div class="bg-white border rounded shadow-sm overflow-hidden border-slate-300">
+                <a href="#">
+                    <img src="https://demo.xpeedstudio.com/marketov2/grocery/wp-content/uploads/sites/12/2018/04/news-3-e1594817509353.jpg"
+                        alt="News 2" class="w-full">
+                </a>
+                <div class="p-4 md:p-8">
+                    <a href="#" class="text-blue-600 text-sm font-medium mb-1 block py-3">Speaker</a>
+                    <a href="#"
+                        class="hover:text-lime-700 text-lg sm:text-xl md:text-2xl font-semibold text-gray-900 my-4">Exterior
+                        Ideas: 10 Colored Fiber Garden Seats
+                    </a>
+                    <div class="flex items-center text-gray-500 text-sm space-x-4">
+                        <div class="flex items-center gap-1">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2z" />
+                            </svg>
+                            <span>0</span>
+                        </div>
+                        <div class="flex items-center gap-1">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path d="M12 8v4l3 3" />
+                                <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" />
+                            </svg>
+                            <span>May 1, 2018</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Article Card 3 -->
+            <div class="bg-white border rounded shadow-sm overflow-hidden border-slate-300">
+                <a href="#">
+                    <img src="https://demo.xpeedstudio.com/marketov2/grocery/wp-content/uploads/sites/12/2018/04/news-2-e1594817494708.jpg"
+                        alt="News 3" class="w-full">
+                </a>
+                <div class="p-4 md:p-8">
+                    <a href="#" class="text-blue-600 text-sm font-medium mb-1 block py-3">Electronics</a>
+                    <a href="#"
+                        class="hover:text-lime-700 text-lg sm:text-xl md:text-2xl font-semibold text-gray-900 my-4">Creative
+                        Water Features And Exterior Design
+                    </a>
+                    <div class="flex items-center text-gray-500 text-sm space-x-4">
+                        <div class="flex items-center gap-1">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2z" />
+                            </svg>
+                            <span>0</span>
+                        </div>
+                        <div class="flex items-center gap-1">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path d="M12 8v4l3 3" />
+                                <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" />
+                            </svg>
+                            <span>April 30, 2018</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- brand section -->
+    <section class="pb-24 border-t bg-white border-slate-200">
+        <div class="max-w-7xl mx-auto text-center">
+            <div class="flex flex-wrap justify-evenly mt-20 items-center gap-10">
+                <!-- Brand Logo 1 -->
+                <a href="#" class="block transition transform hover:scale-105 hover:brightness-110">
+                    <img src="https://demo.xpeedstudio.com/marketov2/grocery/wp-content/uploads/sites/12/2018/04/sponsors_1.png"
+                        alt="Brand 1"
+                        class="w-full max-w-[120px] grayscale hover:grayscale-0 transition duration-300" />
+                </a>
+
+                <!-- Brand Logo 2 -->
+                <a href="#" class="block transition transform hover:scale-105 hover:brightness-110">
+                    <img src="https://demo.xpeedstudio.com/marketov2/grocery/wp-content/uploads/sites/12/2018/04/sponsors_2.png"
+                        alt="Brand 2"
+                        class="w-full max-w-[120px] grayscale hover:grayscale-0 transition duration-300" />
+                </a>
+
+                <!-- Brand Logo 3 -->
+                <a href="#" class="block transition transform hover:scale-105 hover:brightness-110">
+                    <img src="https://demo.xpeedstudio.com/marketov2/grocery/wp-content/uploads/sites/12/2018/04/sponsors_3.png"
+                        alt="Brand 3"
+                        class="w-full max-w-[120px] grayscale hover:grayscale-0 transition duration-300" />
+                </a>
+
+                <!-- Brand Logo 4 -->
+                <a href="#" class="block transition transform hover:scale-105 hover:brightness-110">
+                    <img src="https://demo.xpeedstudio.com/marketov2/grocery/wp-content/uploads/sites/12/2018/04/sponsors_4.png"
+                        alt="Brand 4"
+                        class="w-full max-w-[120px] grayscale hover:grayscale-0 transition duration-300" />
+                </a>
+
+                <!-- Brand Logo 5 -->
+                <a href="#" class="block transition transform hover:scale-105 hover:brightness-110">
+                    <img src="https://demo.xpeedstudio.com/marketov2/grocery/wp-content/uploads/sites/12/2018/04/sponsors_5.png"
+                        alt="Brand 5"
+                        class="w-full max-w-[120px] grayscale hover:grayscale-0 transition duration-300" />
+                </a>
+            </div>
+
+        </div>
+    </section>
+    <section class="pt-4 pb-10">
+        <!-- Newsletter Section -->
+        <div class="bg-lime-600 text-white py-28 px-6">
+            <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between">
+                <div class="flex flex-col gap-3">
+                    <h2 class="text-xl sm:text-2xl md:text-3xl font-bold">Newsletter & Get Updates</h2>
+                    <p class="text-sm sm:text-base">Sign up for our newsletter to get up-to-date from us</p>
+                </div>
+                <div class="mt-4 md:mt-0 flex w-full md:w-auto">
+                    <input type="email" placeholder="Enter Your Mail Here ....."
+                        class="px-4 py-3 bg-white w-full md:w-96 rounded-l-md text-black focus:outline-none" />
+                    <button class="bg-red-500 text-white px-6 py-3 rounded-r-md">SUBMIT</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-white text-gray-700">
+
+
+        <!-- Footer Links -->
+        <div class="max-w-7xl mx-auto py-10 px-6 flex gap-8">
+            <div class="flex-1 grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div>
+                    <img class=""
+                        src="https://demo.xpeedstudio.com/marketov2/grocery/wp-content/uploads/sites/12/2020/07/Logo.png"
+                        alt="logo">
+                    <p class="text-lg sm:text-xl md:text-2xl text-gray-500 mt-8">Got Question? Call us 24/7</p>
+                    <p class="text-lg font-semibold mt-2"><span class="text-black font-bold">[80]</span> 1017 197</p>
+                    <p class="mt-5 text-sm sm:text-base italic text-gray-600">17 Princess Road, London, Greater
+                        London<br>NW1 8JR, UK
+                    </p>
+                    <button class="bg-[#FF6251] text-white px-4 py-2 mt-4 rounded flex items-center gap-2">
+                        <i class="fas fa-map-marker-alt"></i> View On Map
+                    </button>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4 text-lg sm:text-xl md:text-2xl">We Using Safe Payments</h4>
+                    <p class="">Secured by:</p>
+                    <!-- Add payment icons here if available -->
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:w-4/12">
+                <div>
+                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#">Support Center</a></li>
+                        <li><a href="#">Term & Conditions</a></li>
+                        <li><a href="#">Shipping</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Help</a></li>
+                        <li><a href="#">Products Return</a></li>
+                        <li><a href="#">FAQS</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Our Stores</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li>New York</li>
+                        <li>London SF</li>
+                        <li>Cockfosters BP</li>
+                        <li>Los Angeles</li>
+                        <li>Chicago</li>
+                        <li>Las Vegas</li>
+                        <li>Alberto</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Footer -->
+        <div class="text-center text-sm text-gray-500 py-4 border-t">
+            All Rights Reserved &copy;Copyright 2018 by XpeedStudio.
+        </div>
+
+        <!-- Back to Top Button -->
+        <button
+            class="fixed right-4 bottom-10 bg-red-500 text-white p-3 rounded-md shadow-md hover:bg-red-600 cursor-pointer">
+            <i class="fas fa-arrow-up"></i>
+            <span class="sr-only">Back to Top</span>
+        </button>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- categroy click -->
+    <script>
+        function selectCategory(value) {
+            document.getElementById("categoryLabel").innerText = value;
+            document.getElementById("categoryDropdown").classList.add("hidden");
+        }
+
+        function toggleDropdown() {
+            document.getElementById("categoryDropdown").classList.toggle("hidden");
+        }
+
+        window.onclick = function (event) {
+            if (!event.target.closest("#dropdownButton") && !event.target.closest("#categoryDropdown")) {
+                document.getElementById("categoryDropdown").classList.add("hidden");
+            }
+        }
+    </script>
+
+    <!-- navigation bar or sidebar -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const sidebar = document.getElementById("sidebar");
+            const sidebarItems = document.getElementById("sidebarItemsParent");
+            const toggleBtn = document.getElementById("toggleSidebar");
+
+            // Open sidebar
+            toggleBtn.addEventListener("click", (e) => {
+                e.stopPropagation();
+                sidebar.classList.remove("translate-x-[-100%]");
+            });
+
+            // Close on clicking outside
+            document.addEventListener("click", () => {
+                sidebar.classList.add("translate-x-[-100%]");
+            });
+
+            // Prevent closing when clicking inside sidebar
+            sidebarItems.addEventListener("click", (e) => {
+                e.stopPropagation();
+            });
+
+            // Close button inside sidebar
+            document.getElementById("closeSidebar").addEventListener("click", () => {
+                sidebar.classList.add("translate-x-[-100%]");
+            });
+        });
+    </script>
+    <!-- JS Filter Logic -->
+    <script>
+        const tabs = document.querySelectorAll('.tab');
+        const products = document.querySelectorAll('.product');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const filter = tab.dataset.filter;
+
+                // Highlight active tab
+                tabs.forEach(t => t.classList.remove('active-tab'));
+                tab.classList.add('active-tab');
+
+                // Filter products
+                products.forEach(product => {
+                    product.classList.add('hidden');
+                    if (product.classList.contains(filter)) {
+                        product.classList.remove('hidden');
+                    }
+                });
+            });
+        });
+    </script>
+
+    <!-- trending filtering for Filtering -->
+    <script>
+        const buttons = document.querySelectorAll('.tab-btn');
+        const cards = document.querySelectorAll('.card');
+        buttons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // remove active classes
+                buttons.forEach(b => b.classList.remove('activeTabBtn'));
+                btn.classList.add('activeTabBtn');
+
+                const filter = btn.getAttribute('data-filter');
+                cards.forEach(card => {
+                    card.classList.add("hidden");
+                    if (card.classList.contains(filter)) {
+                        card.classList.remove("hidden")
+                    }
+                });
+            });
+        });
+
+        // Initial state (show "on-sell")
+        // window.addEventListener('DOMContentLoaded', () => {
+        //     document.querySelector('[data-filter="on-sell"]').click();
+        // });
+    </script>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>

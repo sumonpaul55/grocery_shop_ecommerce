@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Checkout Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="//unpkg.com/alpinejs" defer></script>
+</head>
+
+<body class="bg-gray-50 p-5">
+
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8" x-data="{ shipToDifferent: false }">
+
+        <!-- Billing Details -->
+        <div class="bg-white p-6 rounded shadow">
+            <h2 class="text-xl font-bold mb-4">Billing details</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <label class="block text-sm font-medium mb-1">First Name *</label>
+                    <input type="text" class="w-full border border-gray-300 p-2 rounded outline-none"
+                        placeholder="Kawsar">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-1">Last Name *</label>
+                    <input type="text" class="w-full border border-gray-300 p-2 rounded outline-none"
+                        placeholder="Islam">
+                </div>
+            </div>
+
+            <div class="mt-4">
+                <label class="block text-sm font-medium mb-1">Company Name (optional)</label>
+                <input type="text" class="w-full border border-gray-300 p-2 rounded outline-none">
+            </div>
+
+            <div class="mt-4">
+                <label class="block text-sm font-medium mb-1">Country / Region *</label>
+                <select class="w-full border border-gray-300 p-2 rounded">
+                    <option selected>Bangladesh</option>
+                </select>
+            </div>
+
+            <div class="mt-4">
+                <label class="block text-sm font-medium mb-1">Street address *</label>
+                <input type="text" class="w-full border border-gray-300 p-2 rounded outline-none mb-2"
+                    placeholder="House number and street name">
+                <input type="text" class="w-full border border-gray-300 p-2 rounded outline-none"
+                    placeholder="Apartment, suite, unit, etc. (optional)">
+            </div>
+
+            <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <label class="block text-sm font-medium mb-1">Town / City *</label>
+                    <input type="text" class="w-full border border-gray-300 p-2 rounded outline-none"
+                        placeholder="Mymensingh">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-1">District *</label>
+                    <select class="w-full border border-gray-300 p-2 rounded">
+                        <option>Mymensingh</option>
+                        <option>Dhaka</option>
+                        <option>Chattogram</option>
+                        <option>Khulna</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <label class="block text-sm font-medium mb-1">Postcode / ZIP (optional)</label>
+                    <input type="text" class="w-full border border-gray-300 p-2 rounded outline-none">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-1">Phone *</label>
+                    <input type="text" class="w-full border border-gray-300 p-2 rounded outline-none"
+                        placeholder="017XXXXXXXX">
+                </div>
+            </div>
+
+            <div class="mt-4">
+                <label class="block text-sm font-medium mb-1">Email address *</label>
+                <input type="email" class="w-full border border-gray-300 p-2 rounded outline-none"
+                    placeholder="example@gmail.com">
+            </div>
+
+            <div class="mt-4">
+                <label class="inline-flex items-center">
+                    <input type="checkbox" class="mr-2" x-model="shipToDifferent">
+                    Ship to a different address?
+                </label>
+            </div>
+
+            <!-- Shipping Address -->
+            <div x-show="shipToDifferent" x-transition class="mt-6 bg-gray-50 p-4 rounded border border-gray-200">
+                <h3 class="text-lg font-semibold mb-3">Shipping Address</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium mb-1">First Name *</label>
+                        <input type="text" class="w-full border border-gray-300 p-2 rounded outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-1">Last Name *</label>
+                        <input type="text" class="w-full border border-gray-300 p-2 rounded outline-none">
+                    </div>
+                </div>
+
+                <div class="mt-4">
+                    <label class="block text-sm font-medium mb-1">Street address *</label>
+                    <input type="text" class="w-full border border-gray-300 p-2 rounded outline-none mb-2">
+                </div>
+
+                <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium mb-1">Town / City *</label>
+                        <input type="text" class="w-full border border-gray-300 p-2 rounded outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-1">District *</label>
+                        <select class="w-full border border-gray-300 p-2 rounded">
+                            <option>Mymensingh</option>
+                            <option>Dhaka</option>
+                            <option>Chattogram</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-4">
+                <label class="block text-sm font-medium mb-1">Order notes (optional)</label>
+                <textarea class="w-full border border-gray-300 p-2 rounded outline-none" rows="3"
+                    placeholder="Notes about your order..."></textarea>
+            </div>
+
+        </div>
+
+        <!-- Order Summary -->
+        <div class="bg-white p-6 rounded shadow h-fit">
+            <h2 class="text-xl font-bold mb-4">Your order</h2>
+            <div class="overflow-x-auto bg-white shadow rounded-lg mb-5">
+                <table class="w-full text-left border-collapse">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            
+                            <th class="p-4 border"></th>
+                            <th class="p-4 border">Product</th>
+                            <!-- <th class="p-4 border">Price</th> -->
+                            <!-- <th class="p-4 border">Quantity</th> -->
+                            <th class="p-4 border">Subtotal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            
+                            <td class="p-4 border">
+
+                                <img src="https://demo.xpeedstudio.com/marketov2/grocery/wp-content/uploads/sites/12/2018/10/15-min-1.jpg"
+                                    alt="Product" class="w-14 h-14" />
+                            </td>
+                            <td class="p-4 border">
+                                <a href="#" class="text-blue-600 hover:underline">Hento Deals Security Tire Grid</a>
+                            </td>
+                            <!-- <td class="p-4 border text-green-600">$59.00</td>
+                            <td class="p-4 border">
+                                <div class="flex items-center">
+                                    <button class="border px-2">-</button>
+                                    <input type="text" value="4" class="w-12 text-center border-t border-b" />
+                                    <button class="border px-2">+</button>
+                                </div>
+                            </td> -->
+                            <td class="p-4 border text-green-600">$236.00</td>
+                        </tr>
+
+                        <tr>
+                            
+                            <td class="p-4 border">
+                                <img src="https://demo.xpeedstudio.com/marketov2/grocery/wp-content/uploads/sites/12/2018/08/5-min-300x300.jpg"
+                                    alt="Product" class="w-14 h-14" />
+                            </td>
+                            <td class="p-4 border ">
+                                <a href="#" class="text-blue-600 hover:underline">Apple iPhone 7s</a>
+                            </td>
+                            <!-- <td class="p-4 border text-green-600">$660.00</td>
+                            <td class="p-4 border">
+                                <div class="flex items-center">
+                                    <button class="border px-2">-</button>
+                                    <input type="text" value="1" class="w-12 text-center border-t border-b" />
+                                    <button class="border px-2">+</button>
+                                </div>
+                            </td> -->
+                            <td class="p-4 border text-green-600">$660.00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="mb-4 p-3 bg-gray-100 rounded">
+                <p><strong>Cash on Delivery</strong></p>
+                <p class="text-sm text-gray-600">Pay with cash upon delivery.</p>
+            </div>
+
+            <button class="w-full bg-green-600 text-white py-3 rounded hover:bg-green-700">Place Order</button>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
