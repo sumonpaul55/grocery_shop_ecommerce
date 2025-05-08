@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Review Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body class="bg-white font-sans">
+
+    <!-- Product Section -->
+    <div class="max-w-7xl mx-auto p-4 text-[#414141]">
+        <div class="flex flex-col md:flex-row gap-6 items-start">
+            <!-- Image -->
+            <div class="flex-1">
+                <div class="flex justify-center border rounded">
+                    <img src="https://demo.xpeedstudio.com/marketov2/grocery/wp-content/uploads/sites/12/2018/10/7-min.jpg"
+                        alt="Product" class="">
+                </div>
+
+                <div class="flex gap-2 mt-4">
+                    <img src="https://demo.xpeedstudio.com/marketov2/grocery/wp-content/uploads/sites/12/2018/08/8-100x100.jpg"
+                        alt="Product" class="object-cover rounded-md border cursor-pointer">
+                    <img src="https://demo.xpeedstudio.com/marketov2/grocery/wp-content/uploads/sites/12/2018/08/8-100x100.jpg"
+                        alt="Product" class="object-cover rounded-md border cursor-pointer">
+                    <img src="https://demo.xpeedstudio.com/marketov2/grocery/wp-content/uploads/sites/12/2018/10/7-min-100x100.jpg"
+                        alt="Product" class="object-cover rounded-md border cursor-pointer">
+                </div>
+            </div>
+
+            <!-- Info -->
+            <div class="flex-1">
+                <h2 class="text-2xl font-semibold mb-2">Hento Deals Security Tire 23Grid</h2>
+                <p class="text-sm text-gray-600 mb-1">Categories: <a href="#" class="text-blue-600">Beauty Products, Grocery,
+                        Home Appliance</a></p>
+                <p class="text-xl font-bold text-green-600 mb-4 mt-5">$95.00</p>
+
+                <div class="flex items-center gap-4 mb-4">
+                    <!-- Quantity and Buttons -->
+                    <div class="flex items-center border">
+                        <button class="border-r bg-[#f9f9f9] px-3 py-2 w-10"><i class="fa-solid fa-minus"></i></button>
+                        <input type="text" value="1" class="w-12 text-center py-2 outline-none font-semibold" readonly>
+                        <button class="border-l bg-[#f9f9f9] px-3 py-2 w-10"><i class="fa-solid fa-plus"></i></button>
+                    </div>
+                    <button class="bg-green-600 text-white px-8 py-3 text-sm rounded font-semibold">Add to cart</button>
+                </div>
+
+                <div class="flex gap-2">
+                    <button class="border px-3 py-2 text-sm w-14 text-green-600"><i
+                            class="fa-solid fa-heart"></i></button>
+                    <!-- <button class="border px-3 py-2 text-sm w-16">⇆</button> -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Reviews Section -->
+        <div class="mt-10 border rounded-md shadow-sm p-4">
+            <h3 class="text-sm font-semibold mb-4 border-b pb-3">Reviews (0)</h3>
+
+            <!-- Rating Breakdown -->
+            <div
+                class="p-4 mb-4 lg:mx-10 rounded bg-[#f9f9f9] shadow-sm lg:flex items-center justify-between gap-4 mt-10">
+                <div>
+                    <div class="mb-2 flex items-center gap-2">
+                        <span>5 Star</span>
+                        <span class="w-[100px] h-[5px] bg-gray-200 block rounded-full"></span>
+                        <span class="text-green-600 text-sm">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star-half-stroke"></i>
+                        </span>
+                    </div>
+                    <div class="mb-2 flex items-center gap-2">
+                        <span>4 Star</span>
+                        <span class="w-[100px] h-[5px] bg-gray-200 block rounded-full"></span>
+                        <span class="text-green-600 text-sm">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </span>
+                    </div>
+                    <div class="mb-2 flex items-center gap-2">
+                        <span>3 Star</span>
+                        <span class="w-[100px] h-[5px] bg-gray-200 block rounded-full"></span>
+                        <span class="text-green-600 text-sm">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </span>
+                    </div>
+                    <div class="mb-2 flex items-center gap-2">
+                        <span>2 Star</span>
+                        <span class="w-[100px] h-[5px] bg-gray-200 block rounded-full"></span>
+                        <span class="text-green-600 text-sm">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </span>
+                    </div>
+                    <div class="mb-2 flex items-center gap-2">
+                        <span>1 Star</span>
+                        <span class="w-[100px] h-[5px] bg-gray-200 block rounded-full"></span>
+                        <span class="text-green-600 text-sm">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="text-xs mt-2">
+                    <span class="text-green-600 text-2xl block mb-2">
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </span>
+                    <span class="text-xl text-[#555]">Average Star Rating: <span class="text-red-600">0.0</span> out of
+                        5 (0 vote)</span>
+                </div>
+            </div>
+
+            <div class="lg:mx-10 mt-8">
+                <!-- Review List -->
+                <div class="mb-6">
+                    <h2 class="text-lg font-semibold mb-5">Reviews</h2>
+                    <p class="text-sm text-gray-600 font-semibold">There are no reviews yet.</p>
+                </div>
+
+                <!-- Add Review Form -->
+                <div class="md:p-8 bg-[#f9f9f9] rounded-md shadow-sm p-4 text-[#414141]">
+                    <h4 class="text-xl font-semibold mb-4">Be the first to review “Hento Deals Security Tire Grid”</h4>
+                    <p class="text-sm mb-4 font-semibold">Your email address will not be published. Required fields are
+                        marked *</p>
+
+                    <div>
+                        <label for="name" class="font-semibold">
+                            Name
+                        </label>
+                        <input type="text" placeholder="Name *" id="name"
+                            class="border w-full text-sm p-2 mb-3 mt-2 outline-none">
+                    </div>
+                    <div>
+                        <label for="email" class="font-semibold">
+                            Email
+                        </label>
+                        <input type="email" placeholder="Email *" id="email"
+                            class="border w-full text-sm p-2 mb-3 mt-2 outline-none">
+                    </div>
+
+                    <label class="flex items-center gap-2 text-xs mb-3 font-semibold">
+                        <input type="checkbox">
+                        Save my name, email, and website in this browser for the next time I comment.
+                    </label>
+
+                    <!-- Star Rating -->
+                    <div class="flex items-center gap-1 mb-3 mt-5">
+                        <span class="text-base font-semibold">Your rating *</span>
+                        <span class="text-green-600 text-sm">
+                            <i class="fa-regular fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </span>
+                    </div>
+
+                    <!-- Review Textarea -->
+                    <textarea rows="4" class="border w-full text-sm p-2 mb-3 outline-none"
+                        placeholder="Your review *"></textarea>
+
+                    <button
+                        class="bg-blue-600 text-white text-sm px-4 py-2 rounded-sm shadow hover:bg-pink-50 hover:text-black font-semibold">Submit</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- Related Products  -->
+    <div class="mt-10 bg-[#f9f9f9] rounded-md shadow-sm p-4 text-[#414141]">
+        <div class="max-w-7xl mx-auto p-4">
+            <h2 class="text-2xl font-semibold mb-8">Related products</h2>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+
+                <!-- Single Product -->
+                <a href="#" class="relative bg-white p-6 text-center border group rounded">
+                    <img src="https://demo.xpeedstudio.com/marketov2/grocery/wp-content/uploads/sites/12/2018/10/11-min.jpg"
+                        alt="product" class="mx-auto mb-4 h-40 object-contain" />
+                    <h3 class="font-semibold mt-2 mb-1">Headset for Phones</h3>
+                    <p class="text-gray-500 text-sm">Drone Headphone Laptop Mobile Mobile Accessories</p>
+                    <p class="text-green-600 text-lg font-semibold">$39.00</p>
+
+                    <!-- Hover Icons -->
+                    <div
+                        class="inset-0 bg-white bg-opacity-70 flex flex-col items-center justify-center space-y-3 opacity-0 group-hover:opacity-100 transition duration-300">
+
+                        <button class="absolute top-0 right-2 text-2xl  hover:text-red-600"><i
+                                class="fa-regular fa-heart"></i></button>
+                        <button
+                            class="border border-gray-400 text-gray-600 px-4 py-2 rounded hover:border-none text-sm hover:bg-green-500 hover:text-white transition">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            Add to cart
+                        </button>
+                    </div>
+                </a>
+
+                <!-- Copy this for other products -->
+                <div class="relative bg-white p-6 text-center border group rounded">
+                    <img src="https://demo.xpeedstudio.com/marketov2/grocery/wp-content/uploads/sites/12/2018/08/0-min.jpg"
+                        alt="product" class="mx-auto mb-4 h-40 object-contain" />
+                    <p class="text-gray-500 text-sm">Gamepad Laptop Mobile</p>
+                    <h3 class="font-semibold mt-2 mb-1">Fortnite Controller</h3>
+                    <p class="text-green-600 text-lg font-semibold">$170.00</p>
+
+                    <!-- Hover Icons -->
+                    <div
+                        class="inset-0 bg-white bg-opacity-70 flex flex-col items-center justify-center space-y-3 opacity-0 group-hover:opacity-100 transition duration-300">
+
+                        <button class="absolute top-0 right-2 text-2xl  hover:text-red-600"><i
+                                class="fa-regular fa-heart"></i></button>
+                        <button
+                            class="border border-gray-400 text-gray-600 px-4 py-2 rounded hover:border-none text-sm hover:bg-green-500 hover:text-white transition">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            Add to cart
+                        </button>
+                    </div>
+                </div>
+
+                <div class="relative bg-white p-6 text-center border group rounded">
+                    <img src="https://demo.xpeedstudio.com/marketov2/grocery/wp-content/uploads/sites/12/2018/08/6.jpg"
+                        alt="product" class="mx-auto mb-4 h-40 object-contain" />
+                    <p class="text-gray-500 text-sm">Drone Headphone Laptop Mobile Mobile Accessories</p>
+                    <h3 class="font-semibold mt-2 mb-1">Headset for Phones</h3>
+                    <p class="text-green-600 text-lg font-semibold">$39.00</p>
+
+                    <!-- Hover Icons -->
+                    <div
+                        class="inset-0 bg-white bg-opacity-70 flex flex-col items-center justify-center space-y-3 opacity-0 group-hover:opacity-100 transition duration-300">
+
+                        <button class="absolute top-0 right-2 text-2xl  hover:text-red-600"><i
+                                class="fa-regular fa-heart"></i></button>
+                        <button
+                            class="border border-gray-400 text-gray-600 px-4 py-2 rounded hover:border-none text-sm hover:bg-green-500 hover:text-white transition">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            Add to cart
+                        </button>
+                    </div>
+                </div>
+
+                <div class="relative bg-white p-6 text-center border group rounded">
+                    <img src="https://demo.xpeedstudio.com/marketov2/grocery/wp-content/uploads/sites/12/2018/08/2-min.jpg"
+                        alt="product" class="mx-auto mb-4 h-40 object-contain" />
+                    <p class="text-gray-500 text-sm">Camera Drone Gamepad Mobile Speaker</p>
+                    <h3 class="font-semibold mt-2 mb-1">Waterproof Camera</h3>
+                    <p class="text-gray-400 line-through">$560.00</p>
+                    <p class="text-green-600 text-lg font-semibold">$520.00</p>
+
+                    <!-- Hover Icons -->
+                    <div
+                        class="inset-0 bg-white bg-opacity-70 flex flex-col items-center justify-center space-y-3 opacity-0 group-hover:opacity-100 transition duration-300">
+
+                        <button class="absolute top-0 right-2 text-2xl  hover:text-red-600"><i
+                                class="fa-regular fa-heart"></i></button>
+                        <button
+                            class="border border-gray-400 text-gray-600 px-4 py-2 rounded hover:border-none text-sm hover:bg-green-500 hover:text-white transition">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            Add to cart
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
